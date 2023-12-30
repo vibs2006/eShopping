@@ -29,14 +29,14 @@ namespace Catalog.Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<ProductBrand>> GetAllBrands()
+        public async Task<IEnumerable<ProductBrand>> GetAllBrands()
         {
-            throw new NotImplementedException();
+            return await _context.Brands.Find(p => true).ToListAsync();
         }
 
-        public Task<IEnumerable<ProductType>> GetAllTypes()
+        public async Task<IEnumerable<ProductType>> GetAllTypes()
         {
-            throw new NotImplementedException();
+            return await _context.Types.Find(p => true).ToListAsync();
         }
 
         public async Task<Product> GetProduct(string id)
