@@ -38,7 +38,10 @@ namespace Catalog.API
                 
             //DI
             services.AddAutoMapper(typeof(Startup));
-            services.AddMediatR(typeof(CreateProductHandler).GetTypeInfo().Assembly);
+
+            //services.AddMediatR(typeof(CreateProductHandler).GetTypeInfo().Assembly);
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(CreateProductHandler).GetTypeInfo().Assembly));
+
             services.AddScoped<ICatalogContext, CatalogContext>();
             //services.AddScoped<ICorrelationIdGenerator, CorrelationIdGenerator>();
             services.AddScoped<ICatalogContext, CatalogContext>();

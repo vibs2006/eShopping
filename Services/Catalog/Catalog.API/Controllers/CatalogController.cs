@@ -50,7 +50,7 @@ namespace Catalog.API.Controllers
         [HttpGet]
         [Route("GetAllProducts")]
         [ProducesResponseType(typeof(IList<ProductResponse>), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<IList<ProductResponse>>> GetAllProducts([FromQuery] CatalogSpecParams catalogSpecParams)
+        public async Task<ActionResult<IList<ProductResponse>>> GetAllProducts()
         {
             try
             {
